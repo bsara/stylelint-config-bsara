@@ -1,0 +1,51 @@
+{
+  "name": "@bsara/stylelint-config",
+  "version": "1.0.0-alpha.0",
+  "description": "Stylelint shareable configs for stylesheet coding standards created by bsara",
+  "authors": [
+    "Brandon Sara (http://bsara.pro/)"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/bsara/stylelint-config-bsara#readme",
+  "repository": "bsara/stylelint-config-bsara",
+  "bugs": {
+    "url": "https://github.com/bsara/stylelint-config-bsara/issues"
+  },
+  "keywords": [
+    "stylelint",
+    "format",
+    "style",
+    "css",
+    "sass",
+    "scss",
+    "postcss",
+    "lint",
+    "linting",
+    "linter"
+  ],
+  "files": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "bump": "npm --no-git-tag-version version prerelease",
+    "bump:major": "npm --no-git-tag-version version major",
+    "bump:minor": "npm --no-git-tag-version version minor",
+    "bump:patch": "npm --no-git-tag-version version patch",
+    "postversion": "scripts/post-version.js",
+    "prepublishOnly": "scripts/tag-version.js",
+    "postpublish": "npm run bump"
+  },
+  "dependencies": {
+    "stylelint-order": "^0.5.0",
+    "stylelint-scss": "^1.5.1",
+    "stylelint-suitcss": "^1.0.0"
+  },
+  "peerDependencies": {
+    "stylelint": ">= 7.13"
+  },
+  "devDependencies": {
+    "shelljs": "^0.7.8",
+    "stylelint": "^7.13.0"
+  }
+}
