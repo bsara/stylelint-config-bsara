@@ -49,7 +49,7 @@ if (!which('git')) {
 
 cd(path.join(__dirname, '..'));
 
-_execCmd(`git add package.json ${pkg.files.join(" ")}`, "add (`git add`) changed version bump files");
+_execCmd(`git add package.json package-lock.json ${pkg.files.join(" ")}`, "add (`git add`) changed version bump files");
 _execCmd(`git commit -m "version bump (${versionName})"`, "commit version bump changes");
 _execCmd('git push', "push git version bump commit to default git remote");
 
