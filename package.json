@@ -42,10 +42,10 @@
     "stylelint-suitcss": "^1.0.0"
   },
   "peerDependencies": {
-    "stylelint": ">= 7.13"
+    "stylelint": "~8.0"
   },
   "devDependencies": {
     "shelljs": "^0.7.8",
-    "stylelint": "^7.13.0"
+    "stylelint": "~8.0.0"
   }
 }
