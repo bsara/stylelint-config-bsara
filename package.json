@@ -37,7 +37,7 @@
     "postpublish": "npm run bump"
   },
   "dependencies": {
-    "stylelint-order": "^0.5.0",
+    "stylelint-order": "^0.6.0",
     "stylelint-scss": "^1.5.1",
     "stylelint-suitcss": "^1.0.0"
   },
