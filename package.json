@@ -1,6 +1,6 @@
 {
   "name": "@bsara/stylelint-config",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Stylelint shareable configs for stylesheet coding standards created by bsara",
   "authors": [
     "Brandon Sara (http://bsara.pro/)"
