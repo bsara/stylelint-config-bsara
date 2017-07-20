@@ -1,6 +1,6 @@
 {
   "name": "@bsara/stylelint-config",
-  "version": "1.0.0-alpha.2",
+  "version": "1.0.0",
   "description": "Stylelint shareable configs for stylesheet coding standards created by bsara",
   "authors": [
     "Brandon Sara (http://bsara.pro/)"
@@ -28,7 +28,7 @@
   ],
   "main": "index.js",
   "scripts": {
-    "bump": "npm --no-git-tag-version version prerelease",
+    "bump": "npm run bump:patch",
     "bump:major": "npm --no-git-tag-version version major",
     "bump:minor": "npm --no-git-tag-version version minor",
     "bump:patch": "npm --no-git-tag-version version patch",
