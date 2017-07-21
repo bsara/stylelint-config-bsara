@@ -1,5 +1,10 @@
 ## [v1.0.1](https://github.com/bsara/stylelint-config-bsara/tree/v1.0.1) - 2017-07-21
 
+#### Updates
+
+- Polished/refined rule set.
+
+
 #### Fixes
 
 - Fixed some typos in rule configurations.
