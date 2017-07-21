@@ -2,7 +2,7 @@
 
 #### Fixes
 
-- Fixed some typos in rule configuration.
+- Fixed some typos in rule configurations.
 
 
 

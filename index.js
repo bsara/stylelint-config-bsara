@@ -31,13 +31,14 @@ module.exports = {
     // General
     // ----------------------------------------------------------
 
+    // Errors
+
     'comment-no-empty':                 true,
     'comment-whitespace-inside':        'always',
     'comment-word-blacklist':           [ 'temp:', 'TEMP:' ],
     'indentation':                      2,
     'max-line-length':                  [ 90, { ignore: [ 'non-comments' ] } ],
     'max-nesting-depth':                [ 3, { ignore: [ 'blockless-at-rules' ] } ],
-    'no-descending-specificity':        true,
     'no-duplicate-selectors':           true,
     'no-eol-whitespace':                true,
     'no-extra-semicolons':              true,
@@ -45,9 +46,15 @@ module.exports = {
     'no-missing-end-of-source-newline': true,
     'no-unknown-animations':            true,
 
+    // Warnings
+
+    'no-descending-specificity':        [ true, { severity: 'warning' } ],
+
 
     // Values
     // ----------------------------------------------------------
+
+    // Errors
 
     'color-hex-case':                  'lower',
     'color-hex-length':                'long',
@@ -60,12 +67,12 @@ module.exports = {
     'number-leading-zero':             'always',
     'string-no-newline':               true,
     'string-quotes':                   'single',
-    'unit-blacklist':                  [ 'pt', { ignoreProperties: [ 'font-size' ] } ],
+    'unit-blacklist':                  [ 'pt', { ignoreProperties: { pt: [ 'font-size' ] } } ],
     'unit-case':                       'lower',
     'unit-no-unknown':                 true,
     'value-keyword-case':              [ 'lower', { ignoreKeywords: [ '/^[\\$@][a-zA-Z0-0\\-_]+$' ] } ],
     'value-list-comma-newline-after':  'always-multi-line',
-    'value-list-comma-newline-before': 'never',
+    'value-list-comma-newline-before': 'never-multi-line',
     'value-list-comma-space-after':    'always-single-line',
     'value-list-comma-space-before':   'never',
     'value-list-max-empty-lines':      0,
@@ -73,6 +80,8 @@ module.exports = {
 
     // Functions
     // ----------------------------------------------------------
+
+    // Errors
 
     'function-calc-no-unspaced-operator':                true,
     'function-comma-newline-after':                      'always-multi-line',
@@ -82,7 +91,7 @@ module.exports = {
     'function-linear-gradient-no-nonstandard-direction': true,
     'function-max-empty-lines':                          1,
     'function-parentheses-newline-inside':               'always-multi-line',
-    'function-parentheses-space-inside':                 'never',
+    'function-parentheses-space-inside':                 'never-single-line',
     'function-url-quotes':                               'always',
     'function-whitespace-after':                         'always',
 
@@ -90,7 +99,8 @@ module.exports = {
     // Properties
     // ----------------------------------------------------------
 
-    'custom-property-empty-line-before':      [ 'always', { except: [ 'after-custom-property', 'first-nested' ], ignore: [ 'after-comment', 'inside-single-line-block' ] } ],
+    // Errors
+
     'property-case':                          'lower',
     'property-no-unknown':                    true,
     'shorthand-property-no-redundant-values': true,
@@ -99,15 +109,16 @@ module.exports = {
     // Declarations
     // ----------------------------------------------------------
 
+    // Errors
+
     'declaration-bang-space-after':                      'never',
     'declaration-bang-space-before':                     'always',
-    'declaration-colon-space-after':                     'always',
     'declaration-colon-space-before':                    'never',
     'declaration-property-unit-whitelist':               { 'font-size': [ 'pt', 'px', 'em', 'rem' ] },
     'declaration-block-no-duplicate-properties':         true,
     'declaration-block-no-shorthand-property-overrides': true,
     'declaration-block-semicolon-newline-after':         'always',
-    'declaration-block-semicolon-newline-before':        'never',
+    'declaration-block-semicolon-newline-before':        'never-multi-line',
     'declaration-block-semicolon-space-after':           'always-single-line',
     'declaration-block-semicolon-space-before':          'never',
     'declaration-block-trailing-semicolon':              'always',
@@ -116,6 +127,8 @@ module.exports = {
     // Blocks
     // ----------------------------------------------------------
 
+    // Errors
+
     'block-closing-brace-empty-line-before': 'never',
     'block-closing-brace-newline-after':     'always',
     'block-closing-brace-newline-before':    'always-multi-line',
@@ -123,13 +136,15 @@ module.exports = {
     'block-closing-brace-space-before':      'always-single-line',
     'block-no-empty':                        true,
     'block-opening-brace-newline-after':     'always-multi-line',
-    'block-opening-brace-newline-before':    'never',
+    'block-opening-brace-newline-before':    [ 'never-single-line', 'never-multi-line' ],
     'block-opening-brace-space-after':       'always-single-line',
     'block-opening-brace-space-before':      'always',
 
 
     // Selectors
     // ----------------------------------------------------------
+
+    // Errors
 
     'selector-attribute-brackets-space-inside':       'never',
     'selector-attribute-operator-space-after':        'never',
@@ -151,7 +166,7 @@ module.exports = {
     'selector-type-case':                             'lower',
     'selector-type-no-unknown':                       [ true, { ignore: [ 'custom-elements' ] } ],
     'selector-list-comma-newline-after':              'always-multi-line',
-    'selector-list-comma-newline-before':             'never',
+    'selector-list-comma-newline-before':             'never-multi-line',
     'selector-list-comma-space-after':                'always-single-line',
     'selector-list-comma-space-before':               'never',
 
@@ -159,11 +174,15 @@ module.exports = {
     // Rules
     // ----------------------------------------------------------
 
+    // Errors
+
     'rule-empty-line-before': [ 'always', { except: [ 'after-single-line-comment', 'first-nested' ], ignore: [ 'after-comment' ] } ],
 
 
     // Media Queries
     // ----------------------------------------------------------
+
+    // Errors
 
     'media-feature-colon-space-after':           'always',
     'media-feature-colon-space-before':          'never',
@@ -174,7 +193,7 @@ module.exports = {
     'media-feature-range-operator-space-before': 'always',
     'custom-media-pattern':                      '[a-z]+(-[a-z]+)*',
     'media-query-list-comma-newline-after':      'always-multi-line',
-    'media-query-list-comma-newline-before':     'never',
+    'media-query-list-comma-newline-before':     'never-multi-line',
     'media-query-list-comma-space-after':        'always-single-line',
     'media-query-list-comma-space-before':       'never',
 
@@ -182,9 +201,11 @@ module.exports = {
     // At-Rules
     // ----------------------------------------------------------
 
+    // Errors
+
     'at-rule-empty-line-before':       [ 'always', { except: [ 'first-nested' ], ignore: [ 'after-comment', 'blockless-after-same-name-blockless' ] } ],
     'at-rule-name-case':               'lower',
-    'at-rule-name-newline-after':      'never',
+    // 'at-rule-name-newline-after':      'never',
     'at-rule-name-space-after':        'always-single-line',
     'at-rule-no-unknown':              true,
     'at-rule-semicolon-newline-after': 'always',
@@ -194,6 +215,8 @@ module.exports = {
 
     // Plugin: stylelint-order
     // ----------------------------------------------------------
+
+    // Errors
 
     'order/order': [
       [
@@ -212,11 +235,15 @@ module.exports = {
     // Plugin: stylelint-scss
     // ----------------------------------------------------------
 
+    // Errors
+
     // TODO: Add SCSS Rules
 
 
     // Plugin: stylelint-suitcss
     // ----------------------------------------------------------
+
+    // Errors
 
     'suitcss/root-no-standard-properties':  true,
     'suitcss/selector-root-no-composition': true
