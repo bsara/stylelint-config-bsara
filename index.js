@@ -1,5 +1,5 @@
 /**
- * @bsara/stylelint-config v1.1.1
+ * @bsara/stylelint-config v1.2.1
  *
  * ISC License (ISC)
  *
