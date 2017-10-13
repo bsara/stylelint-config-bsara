@@ -1,4 +1,4 @@
-## [v1.2.0](https://github.com/bsara/stylelint-config-bsara/tree/v1.2.0) - 2017-10-12
+## [v1.2.1](https://github.com/bsara/stylelint-config-bsara/tree/v1.2.1) - 2017-10-12
 
 #### Added
 

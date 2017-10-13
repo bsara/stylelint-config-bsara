@@ -63,7 +63,7 @@ module.exports = {
     'font-weight-notation':            [ 'numeric', { ignore: [ 'relative' ] } ],
     'length-zero-no-unit':             true,
     'number-leading-zero':             'always',
-    'number-max-precision':            [ 0, [ '%', 'em', 'ex', 'cm', 'mm', 'in', 'pt', 'pc', 'ch', 'rem', 'vh', 'vw', 'vmin', 'vmax' ] ],
+    'number-max-precision':            [ 0, { ignoreUnits: [ '%', 'em', 'ex', 'cm', 'mm', 'in', 'pt', 'pc', 'ch', 'rem', 'vh', 'vw', 'vmin', 'vmax' ] } ],
     'string-no-newline':               true,
     'string-quotes':                   'single',
     'unit-blacklist':                  [ 'pt', { ignoreProperties: { pt: [ 'font-size' ] } } ],
