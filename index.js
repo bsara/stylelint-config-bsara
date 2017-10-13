@@ -32,7 +32,6 @@ module.exports = {
     // ----------------------------------------------------------
 
     // Errors
-
     'comment-no-empty':                 true,
     'comment-whitespace-inside':        'always',
     'comment-word-blacklist':           [ 'temp:', 'TEMP:' ],
@@ -47,15 +46,14 @@ module.exports = {
     'no-unknown-animations':            true,
 
     // Warnings
-
     'no-descending-specificity':        [ true, { severity: 'warning' } ],
+
 
 
     // Values
     // ----------------------------------------------------------
 
     // Errors
-
     'color-hex-case':                  'lower',
     'color-hex-length':                'long',
     'color-named':                     'never',
@@ -65,6 +63,7 @@ module.exports = {
     'font-weight-notation':            [ 'numeric', { ignore: [ 'relative' ] } ],
     'length-zero-no-unit':             true,
     'number-leading-zero':             'always',
+    'number-max-precision':            [ 0, [ '%', 'em', 'ex', 'cm', 'mm', 'in', 'pt', 'pc', 'ch', 'rem', 'vh', 'vw', 'vmin', 'vmax' ] ],
     'string-no-newline':               true,
     'string-quotes':                   'single',
     'unit-blacklist':                  [ 'pt', { ignoreProperties: { pt: [ 'font-size' ] } } ],
@@ -78,11 +77,11 @@ module.exports = {
     'value-list-max-empty-lines':      0,
 
 
+
     // Functions
     // ----------------------------------------------------------
 
     // Errors
-
     'function-calc-no-unspaced-operator':                true,
     'function-comma-newline-after':                      'always-multi-line',
     'function-comma-newline-before':                     'never-multi-line',
@@ -96,26 +95,26 @@ module.exports = {
     'function-whitespace-after':                         'always',
 
 
+
     // Properties
     // ----------------------------------------------------------
 
     // Errors
-
     'property-case':                          'lower',
     'property-no-unknown':                    true,
     'shorthand-property-no-redundant-values': true,
+
 
 
     // Declarations
     // ----------------------------------------------------------
 
     // Errors
-
     'declaration-bang-space-after':                      'never',
     'declaration-bang-space-before':                     'always',
     'declaration-colon-space-before':                    'never',
     'declaration-property-unit-whitelist':               { 'font-size': [ 'pt', 'px', 'em', 'rem' ] },
-    'declaration-block-no-duplicate-properties':         true,
+    'declaration-block-no-duplicate-properties':         [ true, { ignoreProperties: [ 'composes' ] } ],
     'declaration-block-no-shorthand-property-overrides': true,
     'declaration-block-semicolon-newline-after':         'always',
     'declaration-block-semicolon-newline-before':        'never-multi-line',
@@ -124,28 +123,30 @@ module.exports = {
     'declaration-block-trailing-semicolon':              'always',
 
 
+
     // Blocks
     // ----------------------------------------------------------
 
     // Errors
-
     'block-closing-brace-empty-line-before': 'never',
     'block-closing-brace-newline-after':     'always',
     'block-closing-brace-newline-before':    'always-multi-line',
-    'block-closing-brace-space-after':       'always-single-line',
     'block-closing-brace-space-before':      'always-single-line',
     'block-no-empty':                        true,
     'block-opening-brace-newline-after':     'always-multi-line',
-    'block-opening-brace-newline-before':    [ 'never-single-line', 'never-multi-line' ],
+    // 'block-opening-brace-newline-before':    [ 'never-single-line', 'never-multi-line' ],
     'block-opening-brace-space-after':       'always-single-line',
     'block-opening-brace-space-before':      'always',
+
+    // Disabled
+    'block-closing-brace-space-after': null, // NOTE: Not needed because `block-opening-brace-newline-after` prevents multiple blocks on the same line.
+
 
 
     // Selectors
     // ----------------------------------------------------------
 
     // Errors
-
     'selector-attribute-brackets-space-inside':       'never',
     'selector-attribute-operator-space-after':        'never',
     'selector-attribute-operator-space-before':       'never',
@@ -171,19 +172,19 @@ module.exports = {
     'selector-list-comma-space-before':               'never',
 
 
+
     // Rules
     // ----------------------------------------------------------
 
     // Errors
+    'rule-empty-line-before': [ 'always-multi-line', { except: [ 'after-single-line-comment', 'first-nested' ], ignore: [ 'after-comment' ] } ],
 
-    'rule-empty-line-before': [ 'always', { except: [ 'after-single-line-comment', 'first-nested' ], ignore: [ 'after-comment' ] } ],
 
 
     // Media Queries
     // ----------------------------------------------------------
 
     // Errors
-
     'media-feature-colon-space-after':           'always',
     'media-feature-colon-space-before':          'never',
     'media-feature-name-case':                   'lower',
@@ -198,11 +199,11 @@ module.exports = {
     'media-query-list-comma-space-before':       'never',
 
 
+
     // At-Rules
     // ----------------------------------------------------------
 
     // Errors
-
     'at-rule-empty-line-before':       [ 'always', { except: [ 'first-nested' ], ignore: [ 'after-comment', 'blockless-after-same-name-blockless' ] } ],
     'at-rule-name-case':               'lower',
     // 'at-rule-name-newline-after':      'never',
@@ -217,34 +218,43 @@ module.exports = {
     // ----------------------------------------------------------
 
     // Errors
-
     'order/order': [
       [
+        { type: 'at-rule', name: 'apply' },
+        { type: 'at-rule', name: 'extend' },
         'at-variables',
         'dollar-variables',
         'custom-properties',
-        'less-mixins',
         'declarations',
-        'rules',
-        'at-rules'
+        'rules'
       ],
-      { disableFix: true }
+      {
+        disableFix: true,
+        severity:   'warning'
+      }
     ],
+    'order/properties-order': [
+      [ 'composes' ],
+      {
+        disableFix:  true,
+        unspecified: 'bottom'
+      }
+    ],
+
 
 
     // Plugin: stylelint-scss
     // ----------------------------------------------------------
 
     // Errors
-
     // TODO: Add SCSS Rules
+
 
 
     // Plugin: stylelint-suitcss
     // ----------------------------------------------------------
 
     // Errors
-
     'suitcss/root-no-standard-properties':  true,
     'suitcss/selector-root-no-composition': true
   }
